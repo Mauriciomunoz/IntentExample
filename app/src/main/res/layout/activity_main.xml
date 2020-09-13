@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="main"
+            type="com.mapp.intentexample.MainActivity" />
+    </data>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,56 +20,65 @@
         android:gravity="center_horizontal"
         >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Explicit Intent. Open a new activity"
-        android:layout_margin="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explicit Intent. Open a new activity"
+            android:layout_margin="20dp" />
 
-    <Button
-        android:id="@+id/btnExplicit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Explicit Intent"
-        android:layout_margin="20dp" />
+        <Button
+            android:id="@+id/btnExplicit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explicit Intent"
+            android:layout_margin="20dp"
+            android:onClick="@{() -> main.onClickExplicitIntent()}"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Implict Intent. Open another app"
-        android:layout_margin="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Implict Intent. Open another app"
+            android:layout_margin="20dp" />
 
-    <Button
-        android:id="@+id/btnImplicit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Implicit Intent"
-        android:layout_margin="20dp" />
+        <Button
+            android:id="@+id/btnImplicit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Implicit Intent"
+            android:layout_margin="20dp"
+            android:onClick="@{() -> main.onClickImplicitIntent()}"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pending Intent. Waiting an event to be launched."
-        android:layout_margin="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pending Intent. Waiting an event to be launched."
+            android:layout_margin="20dp" />
 
-    <Button
-        android:id="@+id/btnPending"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pending Intent"
-        android:layout_margin="20dp" />
+        <Button
+            android:id="@+id/btnPending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pending Intent"
+            android:layout_margin="20dp"
+            android:onClick="@{() -> main.onClickPendingIntent()}"
+            />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sticky Intent. Waiting an event to be launched"
-        android:layout_margin="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sticky Intent. Waiting an event to be launched"
+            android:layout_margin="20dp" />
 
-    <Button
-        android:id="@+id/btnSticky"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sticky Intent"
-        android:layout_margin="20dp" />
+        <Button
+            android:id="@+id/btnSticky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sticky Intent"
+            android:layout_margin="20dp"
+            android:onClick="@{() -> main.onClickStickyIntent()}"
+            />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
