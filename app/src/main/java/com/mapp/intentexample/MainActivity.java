@@ -30,17 +30,24 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void onClickExplicitIntent(){
+        //An Explicit intent will open an internal activity
         Intent myIntent = new Intent(this, ImplicitIntent.class);
         startActivity(myIntent);
     }
 
     public void onClickImplicitIntent(){
+        //An Implicit intent will open an external app.
+        //The app must have registered the action to know what app can open the send parameter
+        //Also can add a filter using package name to send the parameter to an specific app
         Uri webpage = Uri.parse("https://www.android.com");
         Intent webIntent = new Intent(Intent.ACTION_VIEW, webpage);
         startActivity(webIntent);
     }
 
     public void onClickPendingIntent(){
+        //A Pending intent will be waiting for a call. Is created but will be executed when the
+        //message or event arrives.
+
         Intent intent = new Intent(this, PendingIntentActivity.class);
 
         // Creating a pending intent and wrapping our intent
@@ -54,6 +61,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void launchPendingNotification(){
+        //In this case we have a Pending intent. This Pending inten will be launched when the user tap the notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setSmallIcon(android.R.drawable.ic_dialog_alert);
         Intent intent = new Intent(this, PendingIntentActivity.class);
@@ -78,13 +86,13 @@ public class MainActivity extends AppCompatActivity{
             builder.setChannelId(channelId);
         }
 
-
         // Will display the notification in the notification bar
         notificationManager.notify(1, builder.build());
-
     }
 
     public void onClickStickyIntent(){
+        //A Sticky intent is any intent who is attached to a stickyBroadcast.
+        //This will be waiting for the broadcast event to be launched.
 
         //Can add an event form system (Battery low, connection network, etc)
         IntentFilter customFilter = new IntentFilter("StickyIntent");
@@ -98,7 +106,6 @@ public class MainActivity extends AppCompatActivity{
         //Is deprecated because no security, no protection and other problems.
         //Instead use EventBus or RxJava
         sendStickyBroadcast(stickyIntent);
-
     }
 
 }
